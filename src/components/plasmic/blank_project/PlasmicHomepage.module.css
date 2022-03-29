@@ -121,6 +121,22 @@
   min-width: 0;
   padding: 8px;
 }
+.logo {
+  position: relative;
+  object-fit: fill;
+  max-width: 100%;
+  margin-bottom: 0px;
+  height: 65px;
+  width: 176px;
+  margin-top: 13px;
+  flex-shrink: 0;
+}
+.logo > picture > img {
+  object-fit: fill;
+}
+.logo > .__wab_img-spacer > img {
+  object-fit: fill;
+}
 .column__oFkew {
   display: flex;
   position: relative;
@@ -194,4 +210,10 @@
 }
 .img > .__wab_img-spacer > img {
   object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .img {
+    height: 286px;
+    flex-shrink: 0;
+  }
 }

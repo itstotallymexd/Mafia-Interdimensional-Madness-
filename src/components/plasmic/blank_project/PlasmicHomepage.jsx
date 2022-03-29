@@ -11,13 +11,17 @@
 import * as React from "react"
 import * as p from "@plasmicapp/react-web"
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
+  ensureGlobalVariants,
 } from "@plasmicapp/react-web"
+import { useScreenVariants as useScreenVariantsphWookSThabIa } from "./PlasmicGlobalVariant__Screen" // plasmic-import: PhWookSThabIa/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css"
 import * as projectcss from "./plasmic_blank_project.module.css" // plasmic-import: iE1LgH53bc47vxxsWX9owA/projectcss
 import * as sty from "./PlasmicHomepage.module.css" // plasmic-import: bRJ4pLXDs14_/css
+import _2Glogopng2Tk6MiiLyR from "./images/_2Glogopng2.png" // plasmic-import: TK6miiLyR/picture
 import _3SsOqWtYj5U3NnUe3AoJgpngXoLGcabph from "./images/_3SsOqWtYj5U3NnUe3AoJgpng.png" // plasmic-import: XoLGcabph/picture
 
 export const PlasmicHomepage__VariantProps = new Array()
@@ -26,6 +30,10 @@ export const PlasmicHomepage__ArgProps = new Array()
 
 function PlasmicHomepage__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsphWookSThabIa(),
+  })
+
   return (
     <React.Fragment>
       <style>{`
@@ -61,7 +69,27 @@ function PlasmicHomepage__RenderFunc(props) {
                 >
                   <div
                     className={classNames(projectcss.all, sty.column__zSKqG)}
-                  />
+                  >
+                    <p.PlasmicImg
+                      data-plasmic-name={"logo"}
+                      data-plasmic-override={overrides.logo}
+                      alt={"/home"}
+                      className={classNames(sty.logo)}
+                      displayHeight={"65px"}
+                      displayMaxHeight={"none"}
+                      displayMaxWidth={"100%"}
+                      displayMinHeight={"0"}
+                      displayMinWidth={"0"}
+                      displayWidth={"176px"}
+                      loading={"lazy"}
+                      src={{
+                        src: _2Glogopng2Tk6MiiLyR,
+                        fullWidth: 1775,
+                        fullHeight: 722,
+                        aspectRatio: undefined,
+                      }}
+                    />
+                  </div>
 
                   <div
                     className={classNames(projectcss.all, sty.column__oFkew)}
@@ -90,7 +118,11 @@ function PlasmicHomepage__RenderFunc(props) {
                 data-plasmic-override={overrides.img}
                 alt={""}
                 className={classNames(sty.img)}
-                displayHeight={"798px"}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? "286px"
+                    : "798px"
+                }
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
                 displayMinHeight={"0"}
@@ -113,8 +145,9 @@ function PlasmicHomepage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "columns", "img"],
-  columns: ["columns"],
+  root: ["root", "columns", "logo", "img"],
+  columns: ["columns", "logo"],
+  logo: ["logo"],
   img: ["img"],
 }
 
@@ -148,6 +181,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     columns: makeNodeComponent("columns"),
+    logo: makeNodeComponent("logo"),
     img: makeNodeComponent("img"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

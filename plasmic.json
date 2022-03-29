@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -35,11 +35,24 @@
           "projectId": "iE1LgH53bc47vxxsWX9owA",
           "renderModuleFilePath": "plasmic/blank_project/PlasmicHomepage.jsx",
           "importSpec": {
-            "modulePath": "../pages/index.jsx"
+            "modulePath": "../pages/home.jsx"
           },
           "cssFilePath": "plasmic/blank_project/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "n5CnkQEc8A",
+          "name": "Stuff",
+          "type": "managed",
+          "projectId": "iE1LgH53bc47vxxsWX9owA",
+          "renderModuleFilePath": "plasmic/blank_project/PlasmicStuff.jsx",
+          "importSpec": {
+            "modulePath": "Stuff.jsx"
+          },
+          "cssFilePath": "plasmic/blank_project/PlasmicStuff.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -64,6 +77,16 @@
           "id": "XoLGcabph",
           "name": "3SsOqWT_Yj5u3NNUe3AoJg.png",
           "filePath": "plasmic/blank_project/images/_3SsOqWtYj5U3NnUe3AoJgpng.png"
+        },
+        {
+          "id": "9MAn3grAK",
+          "name": "2glogo.png",
+          "filePath": "plasmic/blank_project/images/_2Glogopng.png"
+        },
+        {
+          "id": "TK6miiLyR",
+          "name": "2glogo.png 2",
+          "filePath": "plasmic/blank_project/images/_2Glogopng2.png"
         }
       ],
       "indirect": false,
